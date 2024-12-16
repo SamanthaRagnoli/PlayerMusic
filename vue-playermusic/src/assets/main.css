@@ -1,0 +1,10 @@
+@import './base.css';
+
+body {  /* Applica gli stili al body */
+    background-color: #333; /* Grigio scuro */
+    color: white; /* Testo bianco */
+    display: flex; /* Abilita i flexbox */
+    flex-direction: column; /* Allinea gli elementi in colonna */
+    justify-content: center; /* Centra verticalmente il contenuto */
+    min-height: 100vh; /* Assicura che il body occupi almeno l'altezza della viewport */
+  }
