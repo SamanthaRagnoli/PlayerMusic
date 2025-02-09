@@ -615,9 +615,7 @@
 
 /* Styles for phones */
 @media (max-width: 767px) {
-.controlli {
-    
-  }
+
 
 .playback-controls,
 .volume-controls,
