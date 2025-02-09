@@ -30,7 +30,7 @@ export default {
 
 .song-img {
   display: block;
-  width: 25%;
+  width: 45%;
   max-width: 100%;
   border-radius: 50%;
   box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
@@ -38,7 +38,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   animation: rotate 10s linear infinite; 
-  animation-play-state: paused; /* Inizialmente in pausa */
+  animation-play-state: paused; 
   margin-left: 80px;
 }
 
@@ -57,22 +57,98 @@ export default {
   }
 }
 
-.song-info { /* Aggiunto div per contenere titolo e artista */
+.song-info { 
   margin-left: 10%;
-  /* Centra il testo */
+  
+}
+
+.song-title {
+  font-family: Poppins;
+  font-size: 45px;
+  line-height: 1.1;
+  
+}
+
+.song-artist {
+  font-family: Poppins;
+  font-size: 30px; 
+  color: #888; 
+  
+}
+
+
+@media (max-width: 1024px) {
+  
+  .song-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.song-img {
+  display: block;
+  width: 50%;
+  max-width: 100%;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
 }
 
 .song-title {
   font-family: Poppins;
   font-size: 35px;
   line-height: 1.1;
+  align-items: center;
   
 }
 
-.song-artist { /* Stile per il nome dell'artista */
+.song-artist {
   font-family: Poppins;
   font-size: 20px; 
-  color: #888; /* Colore grigio */
+  color: #888; 
+  align-items: center;
   
 }
+
+
+
+@media (max-width: 767px) { /* Larghezza massima di 767px (puoi cambiarla) */
+  .song-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.song-img {
+  display: block;
+  width: 60%;
+  max-width: 100%;
+  border-radius: 50%;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+}
+
+.song-title {
+  font-family: Poppins;
+  font-size: 35px;
+  line-height: 1.1;
+  align-items: center;
+  
+}
+
+.song-artist {
+  font-family: Poppins;
+  font-size: 20px; 
+  color: #888; 
+  align-items: center;
+  
+}
+
 </style>

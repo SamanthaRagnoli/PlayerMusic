@@ -283,7 +283,7 @@
       let newIndex;
       do {
         newIndex = Math.floor(Math.random() * this.songs.length);
-      } while (newIndex === this.index && this.songs.length > 1); // Evita di ripetere la stessa canzone se ce n'è più di una
+      } while (newIndex === this.index && this.songs.length > 1); 
 
       this.index = newIndex;
       this.updateSong();
@@ -388,20 +388,20 @@
     }
   },
     repeatOne() {
-        this.player.currentTime = 0; // Riporta la canzone all'inizio
+        this.player.currentTime = 0; 
         this.player.play().catch(error => { 
             console.error("Errore durante la riproduzione:", error); 
         }); 
-        this.toggleRepeat(); // Disattiva la ripetizione "one" dopo la riproduzione
+        this.toggleRepeat(); 
     },
-    handleSongEnd() { // Nuovo metodo per gestire la fine della canzone
+    handleSongEnd() { 
       if (this.repeat === false) {
-        this.next(); // Passa alla traccia successiva solo se la ripetizione è disattivata
+        this.next(); 
       }
     },
   },
   mounted() {
-    this.index = Math.floor(Math.random() * this.songs.length); // Seleziona una canzone casuale all'avvio
+    this.index = Math.floor(Math.random() * this.songs.length); 
     this.updateSong(); 
     const player = this.player;
 
@@ -438,26 +438,36 @@
 
 .controlli {
   display: flex;
+  flex-wrap: nowrap;
   width: 50%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 15px;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .playback-controls {
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-grow: 1;
+  flex: 1;
+  min-width: 40px;
+  
 }
 
 .volume-controls, .repeat-controls {
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 40px;
+
 }
 
 .controlli button {
-  margin: 0 40px;
-  padding: 8px 16px; 
+  margin: 0;
+  padding: 6px 12px; 
   background-color: transparent;
   border: none; 
   cursor: pointer; 
@@ -465,30 +475,30 @@
 }
 
 .pcontrol {
-  width: 30px; 
-  height: 30px;
+  width: 25px; 
+  height: 25px;
   
 }
 
 .icon {
-  width: 15px; 
-  height: 15px;
+  width: 14px; 
+  height: 14px;
   opacity: 50%;
 }
 
 .icon-on {
-  width: 15px; 
-  height: 15px;
+  width: 14px; 
+  height: 14px;
   opacity: 100%;
 }
 
 
 .progress-bar {
   width: 85%;
-  height: 6px;
+  height: 4px;
   background-color: #6a6a6a;
   border-radius: 5px;
-  margin: 7px 0;
+  margin: 5px 0;
 }
 
 .progress {
@@ -498,13 +508,12 @@
 }
 
 
-
 .time {
   display: flex;
   justify-content: space-between;
   align-items: center; 
   margin: 2px 0;
-  font-size: 12px;
+  font-size: 10px;
   width: 85%; 
   opacity: 50%;
 }
@@ -519,12 +528,12 @@
 }
 
 .volume-bar {
-  width: 100px; 
-  height: 6px; 
+  width: 60px; 
+  height: 4px; 
   background-color: #777;
   border-radius: 5px;
   cursor: pointer;
-  margin: 0 10px;
+  margin: 0 5px;
   display: block;
 }
 
@@ -538,19 +547,97 @@
   align-items: center;
 }
 
-.repeat-button.active { /* Stile per il pulsante attivo */
-  fill: white; /* Cambia il colore del pulsante in bianco */
+.repeat-button.active { 
+  fill: white; 
 }
 
 .repeat-button.active { 
   fill: white; 
 }
 
-.repeat-button.repeatOne { /* Stile per la ripetizione una sola volta */
-  fill: red; /* Oppure un altro colore a tua scelta */
+.repeat-button.repeatOne { 
+  fill: red; 
 }
 
-.music-player { /* Aggiungi questo stile al componente MusicPlayer.vue */
-  width: 80%; 
+.music-player { 
+  width: 80%;
+ 
+}
+
+/* Media Queries for different screen sizes */
+
+/* Styles for tablets and larger screens */
+@media (min-width: 768px) {
+.bottom-section {
+    padding: 20px;
+  }
+
+.controlli {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+.controlli button {
+    padding: 8px 16px;
+  }
+
+  .playback-controls,
+  .volume-controls,
+  .repeat-button {
+    flex: 0 0 auto; /* Riporto a dimensione fissa per schermi grandi */
+  }
+
+.pcontrol {
+    width: 30px;
+    height: 30px;
+  }
+
+.icon,.icon-on {
+    width: 15px;
+    height: 15px;
+  }
+
+.progress-bar {
+    height: 6px;
+    margin: 7px 0;
+  }
+
+.time {
+    font-size: 12px;
+  }
+
+.volume-bar {
+    width: 80px;
+    height: 6px;
+    margin: 0 10px;
+  }
+}
+
+/* Styles for phones */
+@media (max-width: 767px) {
+.controlli {
+    
+  }
+
+.playback-controls,
+.volume-controls,
+.repeat-button {
+    
+    min-width: 150px; /* Remove minimum width */
+    margin-bottom: 8px; /* Slightly reduced margin */
+  }
+
+.controlli button {
+    margin: 12 8px; /* Slightly reduced button margins */
+  }
+
+.pcontrol {
+    width: 30px; /* Slightly larger buttons on very small screens if needed */
+    height: 30px; /* Slightly larger buttons on very small screens if needed */
+  }
+
+.volume-bar {
+    width: 50px; /* Further reduced volume bar width */
+  }
 }
 </style>

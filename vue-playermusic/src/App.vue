@@ -21,13 +21,17 @@ import Work from './components/Work.vue'
 
 body {
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 #app {
-  max-width: 100%; /* Rimuovi la larghezza massima */
-  max-height: 100%;
-  margin: 30px; /* Rimuovi i margini */
-  padding: 0; /* Rimuovi il padding */
+  max-width: 80%; 
+  max-height: 1200px;
+  margin: 0 auto; 
+  padding: 20px; 
 }
 
 
