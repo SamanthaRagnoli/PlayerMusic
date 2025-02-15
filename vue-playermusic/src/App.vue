@@ -25,10 +25,11 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  margin: 0;
 }
 
 #app {
-  max-width: 80%; 
+  max-width: 100%; 
   max-height: 1200px;
   margin: 0 auto; 
   padding: 20px; 

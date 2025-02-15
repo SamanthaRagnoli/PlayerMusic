@@ -25,13 +25,15 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 150px;
+  margin-bottom: 130px;
+  text-align: left;
 }
 
 .song-img {
   display: block;
-  width: 45%;
-  max-width: 100%;
+  width: 50%;
+  max-width: 430px;
+  height: auto;
   border-radius: 50%;
   box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
   background-position: center;
@@ -64,14 +66,15 @@ export default {
 
 .song-title {
   font-family: Poppins;
-  font-size: 45px;
+  font-size: 35px;
   line-height: 1.1;
+  align-items: center;
   
 }
 
 .song-artist {
   font-family: Poppins;
-  font-size: 30px; 
+  font-size: 20px; 
   color: #888; 
   
 }
@@ -84,22 +87,24 @@ export default {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  text-align: center;
+  margin-bottom: 120px;
 
 }
 
 .song-img {
   display: block;
-  width: 50%;
-  max-width: 100%;
+  width: 60%;
+  max-width: 300px;
   align-items: center;
   margin-bottom: 50px;
+  margin-left: 0px;
 }
 
-}
 
 .song-title {
   font-family: Poppins;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 1.1;
   align-items: center;
   
@@ -107,11 +112,20 @@ export default {
 
 .song-artist {
   font-family: Poppins;
-  font-size: 20px; 
+  font-size: 22px; 
   color: #888; 
   align-items: center;
   
 }
+
+.song-info { 
+  margin-left: 0;
+  
+}
+
+}
+
+
 
 
 
@@ -121,34 +135,48 @@ export default {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  text-align: center;
+  margin-bottom: 110px;
 
 }
 
 .song-img {
   display: block;
-  width: 60%;
-  max-width: 100%;
+  width: 80%;
+  max-width: 250px;
   border-radius: 50%;
   align-items: center;
-  margin-bottom: 100px;
-}
-
+  margin-bottom: 50px;
+  margin-left: 0px;
 }
 
 .song-title {
   font-family: Poppins;
-  font-size: 35px;
+  font-size: 28px;
   line-height: 1.1;
   align-items: center;
+  text-align: center;
   
 }
 
 .song-artist {
   font-family: Poppins;
-  font-size: 20px; 
+  font-size: 18px; 
   color: #888; 
   align-items: center;
   
 }
+
+
+.song-info { 
+  margin-left: 0;
+  
+}
+
+}
+
+
+
+
 
 </style>
