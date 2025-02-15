@@ -621,7 +621,7 @@
 .volume-controls,
 .repeat-button {
     
-    min-width: 150px; /* Remove minimum width */
+    min-width: 80px; /* Remove minimum width */
     margin-bottom: 8px; /* Slightly reduced margin */
   }
 
